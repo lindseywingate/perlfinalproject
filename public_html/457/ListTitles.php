@@ -15,9 +15,9 @@ if ( $_POST['act'] == "List the titles" ) {
   Query OK, 0 rows affected (0.07 sec)
  
   *************************************************************/
-  $username = "your-id";
-  $password = "your-pw";
-  $database = "your-db";
+  $username = "lwingate";
+  $password = "password";
+  $database = "school";
   $host     = "mysqldev.aero.und.edu";
  
   // Connect to the database.

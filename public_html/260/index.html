@@ -5,16 +5,19 @@
 </head>
 <body>
 <h1>Campus Connection Jr.</h1>
-<form action="displayclasses.pl">
+<form action="displaysearch.pl" method="post" name="displayclasses">
 	<h4>Search for a Class</h4>
 	<input type="text" name="class_search">
 	<input type="submit" id="general_button" value="Search">
+	<input type="reset" value="Clear">
 </form>
 <form action="changeclass.pl">
 	<h4>Edit an Existing Class</h4>
 	<input type="text" name="change_class">
 	<input type="submit" id="general_button"  value="Go">	
+	<input type="reset" value="Clear">
 </form>
+<button type="button" id="general_button">Display All Classes</button>
 <form method="post" action="addclass.pl">
 	<h4>Add a Class</h4>
 	<tr>
