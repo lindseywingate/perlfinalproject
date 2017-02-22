@@ -4,7 +4,6 @@ if($_POST['act']=="Upload" ) {
            ( $_FILES["file"]["size"] < 50000 ) ) {
         if ( $_FILES["file"]["error"] <= 0 ) {
           move_uploaded_file( $_FILES["file"]["tmp_name"], "upload/books.xml" );
-          echo "Stored in: <em>upload/books.xml</em>\n";
           chmod( "upload/books.xml", 0777 );
         }
 	}
@@ -14,7 +13,6 @@ if($_POST['act']=="Upload" ) {
     $host = "mysqldev.aero.und.edu";
     $conn = mysql_connect( $host, $username, $password, false, 128 );
 	if ($conn) {
-		echo "\nSuccessfully connected";
 		mysql_select_db('lindseywingate', $conn);
 	}
 	else {
@@ -25,12 +23,15 @@ if($_POST['act']=="Upload" ) {
 	$xml = simplexml_load_string($get);
 	$json = json_encode($xml);
 	$array = json_decode($json, TRUE);
-	print_r($array);
 	foreach($array as $a=>$b) {
-		echo "$b[0]\n";
-		foreach($b[0] as $c=>$d) {
-			echo "$c, $d\n";
+		foreach($b as $c=>$d) {
+			$ISBN = $d['ISBN'];
+			$title = $d['title'];
+			$price = $d['price'];
+			$query = "insert into books values ('$ISBN', '$title', '$price');";
+			$result = mysql_query($query);
 		}
 	}	
+	mysql_close();
 }
 ?>
