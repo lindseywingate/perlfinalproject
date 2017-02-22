@@ -19,5 +19,9 @@ if ($_POST['submit'] == 'login') {
 
 	echo "Number of results: $num";
 }
-
+	if($num>1) {
+		unset($_SESSION['customer']);
+		session_start();
+		$_SESSION['customer'] = $_POST['name'];
+	}
 ?>
