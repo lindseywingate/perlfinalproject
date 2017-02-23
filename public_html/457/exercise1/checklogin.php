@@ -1,6 +1,6 @@
 <?php
 #This page is used to check the login credentials
-if ($_POST['submit'] == 'login') {
+if ($_POST["thisone"] == "login") {
 	$username = "lindseywingate";
 	$password = "password";
 	$database = "lindseywingate";
@@ -12,16 +12,18 @@ if ($_POST['submit'] == 'login') {
 	$username = $_POST['username'];
 	$password = $_POST['password'];
 
-	$query = "select * from users where username = $username && password = $password";	
+	$query = "select * from users where username = '$username' && password ='$password'";	
 
 	$result = mysql_query($query);
 	$num = mysql_numrows($result);
 
-	echo "Number of results: $num";
-}
-	if($num>1) {
-		unset($_SESSION['customer']);
+	if($num) {
 		session_start();
-		$_SESSION['customer'] = $_POST['name'];
+		$_SESSION['timeout'] = time();
+		$_SESSION['cookie'] = 'whitechocolate';
 	}
+	else {
+		echo "Your login information was incorrect. Please try again.";
+	}
+}
 ?>
