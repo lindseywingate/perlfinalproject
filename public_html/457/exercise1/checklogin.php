@@ -32,6 +32,8 @@ if ($_POST["thisone"] == "login") { //If the user logs in
 			session_start();
 			$_SESSION['timeout'] = time();
 			$_SESSION['cookie'] = 'admin';
+			header("Location: http://people.aero.und.edu/~lwingate/457/exercise1/adminhome.php");
+			exit();
 		}	
 	}
 	else {//if not results returned, the login info was wrong
