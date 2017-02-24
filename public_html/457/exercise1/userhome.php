@@ -1,8 +1,10 @@
 <?php 
 session_start();
-if($_SESSION['timeout'] + 1 * 60 < time()) {
-	#logout button
+if(!isset($_SESSION['user_id']) || time() - $_SESSION['login_time'] > 1800) {
+	echo "Your session has expired. Please login again.";
 
+}	#logout button
+else {
 	#search, case insensitive - keywords separated by spaces. if query is empty, list all books.
 	#add checkbox next to each book to put in cart and hyperlinked title
 	echo  "
@@ -33,17 +35,10 @@ if($_SESSION['timeout'] + 1 * 60 < time()) {
 
 #show details of a book by clicking on linked titles (isbn, title, and price)
 
-
-
 "
 	</font>
 	</body>	
 	</html>
 		";
-
-
-}
-else {
-	echo "Your session has expired. Please login again.";
 }
 ?>
