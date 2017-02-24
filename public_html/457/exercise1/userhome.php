@@ -1,7 +1,11 @@
 <?php 
 session_start();
 if($_SESSION['timeout'] + 1 * 60 < time()) {
-	echo "
+	#logout button
+
+	#search, case insensitive - keywords separated by spaces. if query is empty, list all books.
+	#add checkbox next to each book to put in cart and hyperlinked title
+	echo  "
 	<html>
 	<center>
 			<form method='post' action='ListTitles.php'>
@@ -18,11 +22,26 @@ if($_SESSION['timeout'] + 1 * 60 < time()) {
 	</form> 
 	</table>
 	</center>
+";
 
+#manage shopping cart
+	#each cart entry has quantity to purchase and hyperlinked title
+	#if quantity is 0, remove from cart
+	#show total for price of all books in cart
+
+#list their own info (id, name, hyperlinked titles and quantities of purchased books, and total amount spent on books
+
+#show details of a book by clicking on linked titles (isbn, title, and price)
+
+
+
+"
 	</font>
 	</body>	
 	</html>
 		";
+
+
 }
 else {
 	echo "Your session has expired. Please login again.";

@@ -2,12 +2,12 @@
 #This page is used to check the login credentials
 
 if ($_POST["thisone"] == "login") { //If the user logs in
-	$username = "lindseywingate";
-	$password = "password";
+	$user = "lindseywingate";
+	$pass = "password";
 	$database = "lindseywingate";
 	$host = "mysqldev.aero.und.edu";
 
-	$conn = mysql_connect ($host, $username, $password); //Connect to database
+	$conn = mysql_connect ($host, $user, $pass); //Connect to database
 	mysql_select_db($database, $conn);
 	
 	$username = $_POST['username']; //Get variables user entered
@@ -19,26 +19,24 @@ if ($_POST["thisone"] == "login") { //If the user logs in
 	$num = mysql_numrows($result); //how many are there?
 
 	if($num) { //if there are results, start a session
+		session_start();
+		$_SESSION['login_time'] = time();
+		$_SESSION['user_id'] = $username;
 		$row = mysql_fetch_assoc($result); //check the user type and direct them to the appropriate home page
 		if($row['type_user']=="C") {
 			echo "Customer";
-			$_SESSION['timeout'] = time();
-			$_SESSION['cookie'] = 'customer';
 			header("Location: http://people.aero.und.edu/~lwingate/457/exercise1/userhome.php");
 			exit();
 		}
 		elseif($row['type_user']=="A") {
 			echo "Admin";
-			session_start();
-			$_SESSION['timeout'] = time();
-			$_SESSION['cookie'] = 'admin';
 			header("Location: http://people.aero.und.edu/~lwingate/457/exercise1/adminhome.php");
 			exit();
 		}	
 	}
-	else {//if not results returned, the login info was wrong
-		echo "Your login information was incorrect. Please try again.";
-	}
-
 }
+else {//if not results returned, the login info was wrong
+	echo "Your login information was incorrect. Please try again.";
+}
+
 ?>

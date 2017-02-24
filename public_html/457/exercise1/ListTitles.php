@@ -1,6 +1,5 @@
 <html><body>
-<?php
- 
+<?php 
 if ( $_POST['act'] == "List the titles" ) {
 	$username = "lindseywingate";
 	$password = "password";
