@@ -12,17 +12,12 @@ echo "ADMIN HOMEPAGE
 </form>
 
 <form action='listbooks.php' method='post'>
-<input type='submit' name='xmlupload' value='Click to view books'>
+<input type='submit' name='books' value='Click to View Books'>
+</form>
+
+<form action='listcustomers.php' method='post'>
+<input type='submit' name='customers' value='Click to View Customers'>
 </form>
 ";
-
-#list data of all books sorted by title ascendingly, all data
-
-#list ids and names of all customers having purchased the book by clicking books hyperlinked title
-
-#list data of all customers sorted by name ascendingly (id, hyperlinked name, total amount)
-
-#list isbns, titles, and quantities of books purchased by the customer by clicking his/her hyperlinked name
 }
-
 ?>

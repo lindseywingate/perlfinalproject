@@ -13,9 +13,19 @@ mysql_select_db($database, $conn);
 $query = 'select * from books order by title asc';
 $result = mysql_query($query);
 
+
+echo "
+<h2>Books</h2>
+<p>*Click on the hyperlinked titles to see the customers that have bought this book.</p>
+";
 while($row=mysql_fetch_assoc($result)) {
 	foreach($row as $key=>$value) {
-		echo $key .": ". $value . "<br>";
+		if($key == 'title') {	
+			echo "<a href='printcustomer.php?name=$value'>" .$key .": ".$value ."</a><br>";
+		}
+		else {
+			echo $key .": ". $value . "<br>";
+		}
 	}
 	echo "<br>";
 }
