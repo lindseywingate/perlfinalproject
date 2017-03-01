@@ -31,12 +31,11 @@ if ($_POST["thisone"] == "login") { //If the user logs in
 		elseif($row['type_user']=="A") {
 			echo "Admin";
 			header("Location: http://people.aero.und.edu/~lwingate/457/exercise1/adminhome.php");
-			exit();
-		}	
+		}
 	}
-}
-else {//if not results returned, the login info was wrong
-	echo "Your login information was incorrect. Please try again.";
+	else {
+		echo "Your login credentials were incorrect. Please try again.";
+	}
 }
 
 ?>

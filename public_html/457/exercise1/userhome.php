@@ -3,7 +3,7 @@ session_start();
 if(!isset($_SESSION['user_id']) || time() - $_SESSION['login_time'] > 1800) {
 	echo "Your session has expired. Please login again.";
 
-}	#logout button
+}	
 else {
 	#search, case insensitive - keywords separated by spaces. if query is empty, list all books.
 	#add checkbox next to each book to put in cart and hyperlinked title
@@ -11,14 +11,12 @@ else {
 	<html>
 	<center>
 			<form method='post' action='ListTitles.php'>
-			<tr bgcolor='#EDF3FE'>
-			<font FACE='Verdana, Arial, Helvetica' SIZE='-1'>
-			<strong> &nbsp; Search by Book Title: &nbsp;</strong></font>
-			</b> &nbsp;<input type='text' size='32' name='title' value='Web'><font size='0'><br /><br /></font>
-				<input type='submit' name='act' value='List the titles'> &nbsp; &nbsp; 
-				<input type='submit' name='act' value='Help'> &nbsp; &nbsp;
+			<strong>Search by Book Title:</strong>
+			<input type='text' size='32' name='title' value='Web'>
+				<input type='submit' name='act' value='List the titles'> 
+				<input type='submit' name='act' value='Help'> 
 				<input type='reset'	value='Reset'><br />
-			</center></font>
+			</font>
 		</td>
 		</tr>
 	</form> 
