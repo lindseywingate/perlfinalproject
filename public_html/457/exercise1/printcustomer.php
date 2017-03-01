@@ -14,12 +14,7 @@ $result = mysql_query($query);
 
 while($row=mysql_fetch_assoc($result)) {
     foreach($row as $key=>$value) {
-        if($key == 'title') {   
-            echo "<a href='printcustomer.php?name=$value'>" .$key .": ".$value ."</a><br>";
-        }
-        else {  
-            echo $key .": ". $value . "<br>";
-        }       
+        echo $key .": ". $value . "<br>";
     }       
     echo "<br>";
 }
