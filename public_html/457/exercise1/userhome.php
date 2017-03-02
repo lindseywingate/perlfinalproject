@@ -5,12 +5,11 @@ if(!isset($_SESSION['user_id']) || time() - $_SESSION['login_time'] > 1800) {
 
 }	
 else {
-	#search, case insensitive - keywords separated by spaces. if query is empty, list all books.
 	#add checkbox next to each book to put in cart and hyperlinked title
 	echo  "
 	<html>
 	<center>
-			<form method='post' action='ListTitles.php'>
+			<form method='post' action='listtitles.php'>
 			<strong>Search by Book Title:</strong>
 			<input type='text' size='32' name='title' value='Web'>
 				<input type='submit' name='act' value='List the titles'> 
