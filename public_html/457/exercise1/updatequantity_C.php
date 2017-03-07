@@ -18,6 +18,9 @@ foreach($quantities as $q=>$u) {
 	echo "$q and quantity: $u<br>";	
 }
 
+$query1 = "delete from shoppingcart where quantity=0";
+mysql_query($query1);
+
 header("Location: http://people.aero.und.edu/~lwingate/457/exercise1/shoppingcart_C.php");
 
 ?>

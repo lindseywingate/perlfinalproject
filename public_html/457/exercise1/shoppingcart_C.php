@@ -1,6 +1,5 @@
 <?php
 session_start();
-
 $user = $_SESSION['user_id'];
 
 $username = "lindseywingate";
@@ -16,6 +15,7 @@ $query = "select * from shoppingcart where name='$user'";
 $result = mysql_query($query) or die();
 $num = mysql_numrows($result);
 $i = 0;
+$total = 0;
 while($i<$num) {
 	$title=mysql_result($result, $i, 'title');
     $price=mysql_result($result, $i, 'price');
@@ -23,7 +23,15 @@ while($i<$num) {
 	$quantity=mysql_result($result,$i, 'quantity');
     $i++;   
 	echo "<input type='text' name='post[$ISBN]' value=$quantity size=2>".$title."<br>";
+	$total = $total + $price*$quantity;
 }
-echo "<input type='submit'>";
-echo "</form>";
+echo "
+<br>Total: \$$total<br><br>
+<input type='submit' value='Submit Changes'></form>
+<form method='post' action='checkout_C.php'>
+	<input type='submit' value='Checkout'>
+</form>
+<form method='post' action='userhome.php'>
+	<input type='submit' value='Home'>
+</form>";
 ?>
