@@ -12,7 +12,7 @@ if ( $_POST['act'] == "List the titles" ) {
 	$title = $_POST['title']; 
 
 	echo"
-	<form action='shoppingcart_C.php' method='post'>";
+	<form action='addtocart_C.php' method='post'>";
 	#start by querying title entered:
 	$boolean = false;
 	$query = "select * from books where title like '%$title%'";
@@ -35,7 +35,7 @@ if ( $_POST['act'] == "List the titles" ) {
 				$title = mysql_result( $result, $i, "title" );
 				$ISBN = mysql_result( $result, $i, "ISBN" );
 				$cost = mysql_result ( $result, $i, "price" );
-				echo	"<input type='checkbox' name='books[]' value=$ISBN/>Title: $title<br>ISBN: $ISBN<br>Price: $cost<br><br>";
+				echo "<input type='checkbox' name='books[]' value=$ISBN>Title: $title<br>ISBN: $ISBN<br>Price: $cost<br><br>";
 				$i++;
 			}
 		}
@@ -50,13 +50,13 @@ if ( $_POST['act'] == "List the titles" ) {
 				$title = mysql_result( $finalresults, $y, "title" );
 				$ISBN = mysql_result( $finalresults, $y, "ISBN" );
 				$cost = mysql_result ( $finalresults, $y, "price" );
-				echo "<input type='checkbox' name='books[]' value=$ISBN/>Title: $title<br>ISBN: $ISBN<br>Price: $cost<br><br>";
+				echo "<input type='checkbox' name='books[]' value=$ISBN>Title: $title<br>ISBN: $ISBN<br>Price: $cost<br><br>";
 				$y++;
 			}
 		}
 	}
 	echo "
-	<input type='submit' name='checkboxsubmit' value='submit' />
+	<input type='submit' name='checkboxsubmit' value='Add to Cart'>
 	</form>";
 	mysql_close( );
 }
