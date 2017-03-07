@@ -1,6 +1,6 @@
 <html><body>
 <?php 
-if ( $_POST['act'] == "List the titles" ) {
+if ( $_POST['act'] == "Search" ) {
 	$username = "lindseywingate";
 	$password = "password";
 	$database = "lindseywingate";
@@ -55,16 +55,22 @@ if ( $_POST['act'] == "List the titles" ) {
 			}
 		}
 	}
+	#matches were found on first phrase entered - doesn't break up into keywords
+	else {
+		$i=0;
+		while ( $i < $num ) { 
+                $boolean = true;
+                $title = mysql_result( $result, $i, "title" );
+                $ISBN = mysql_result( $result, $i, "ISBN" );
+                $cost = mysql_result ( $result, $i, "price" );
+                echo "<input type='checkbox' name='books[]' value=$ISBN>Title: $title<br>ISBN: $ISBN<br>Price: $cost<br><br>";
+                $i++;
+		}
+	}
 	echo "
 	<input type='submit' name='checkboxsubmit' value='Add to Cart'>
 	</form>";
 	mysql_close( );
-}
-elseif ( $_POST["act"] == "Help" ) {
-	echo "No help at this moment.";
-}
-else {
-	echo "No such option.";
 }
 ?>
 
