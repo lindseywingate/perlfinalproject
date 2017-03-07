@@ -12,12 +12,17 @@ echo "ADMIN HOMEPAGE
 </form>
 
 <form action='listbooks.php' method='post'>
-<input type='submit' name='books' value='Click to View Books'>
+	<input type='submit' name='books' value='Click to View Books'>
 </form>
 
 <form action='listcustomers.php' method='post'>
-<input type='submit' name='customers' value='Click to View Customers'>
+	<input type='submit' name='customers' value='Click to View Customers'>
 </form>
+
+<form action='logout.php' method='post'>
+	<input type='submit' name='logout' value='Logout'>
+</form>
+
 ";
 }
 ?>

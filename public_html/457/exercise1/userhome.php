@@ -7,20 +7,21 @@ if(!isset($_SESSION['user_id']) || time() - $_SESSION['login_time'] > 1800) {
 else {
 	#add checkbox next to each book to put in cart and hyperlinked title
 	echo  "
-	<html>
-	<center>
-			<form method='post' action='listtitles.php'>
-			<strong>Search by Book Title:</strong>
-			<input type='text' size='32' name='title' value='Web'>
-				<input type='submit' name='act' value='List the titles'> 
-				<input type='submit' name='act' value='Help'> 
-				<input type='reset'	value='Reset'><br />
-			</font>
-		</td>
-		</tr>
+<html>
+	<h2>Customer Homepage</h2>
+	<form method='post' action='listtitles_C.php'>
+	<strong>Search by Book Title:</strong>
+	<input type='text' size='32' name='title' value='Web'>
+		<input type='submit' name='act' value='List the titles'> 
+		<input type='submit' name='act' value='Help'> 
+		<input type='reset'	value='Reset'>
 	</form> 
-	</table>
-	</center>
+
+
+	<form method='post' action='logout.php'>
+		<input type='submit' name='logout' value='Logout'>
+	</form>
+</html>
 ";
 
 #manage shopping cart
@@ -32,10 +33,5 @@ else {
 
 #show details of a book by clicking on linked titles (isbn, title, and price)
 
-"
-	</font>
-	</body>	
-	</html>
-		";
 }
 ?>
