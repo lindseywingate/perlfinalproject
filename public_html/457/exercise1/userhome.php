@@ -17,6 +17,9 @@ else {
 		<input type='reset'	value='Reset'>
 	</form> 
 
+	<form method='post' action='shoppingcart_C.php'>
+		<input type='submit' name='act' value='Shopping Cart'>
+	</form>
 
 	<form method='post' action='logout.php'>
 		<input type='submit' name='logout' value='Logout'>
