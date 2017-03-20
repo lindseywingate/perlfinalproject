@@ -20,6 +20,7 @@ while($row=mysql_fetch_assoc($result)) {
 	<form method='post' action='userhome.php'>
 		<input type='submit' value='Back'>
 	</form>
+    <button><a href='listbookdetails_C.php' download>Show Source</a></button><br><br>
 	";
 }
 ?>

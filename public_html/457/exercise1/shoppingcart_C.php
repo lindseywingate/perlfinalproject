@@ -33,5 +33,7 @@ echo "
 </form>
 <form method='post' action='userhome.php'>
 	<input type='submit' value='Home'>
-</form>";
+</form>
+<button><a href='shoppingcart_C.php' download>Show Source</a></button><br><br>";
+
 ?>

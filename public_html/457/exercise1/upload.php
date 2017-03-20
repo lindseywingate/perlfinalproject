@@ -18,6 +18,8 @@ echo"
 		<input type='reset' value='Reset'>
 		<input type='reset' value='Main Menu' onclick=\"window.location.href='http://people.aero.und.edu/~lwingate/457/exercise1/adminhome.php' \" />
 	</form>
+	<button><a href='adminhome.php' download>Show Source</a></button><br><br>
+
 </body>
 </html>
 ";

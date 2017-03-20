@@ -72,6 +72,7 @@ if ( $_POST['act'] == "Search" ) {
 	</form>";
 	mysql_close( );
 }
+echo"     <button><a href='listtitles_C.php' download>Show Source</a></button><br><br>";
 ?>
 
 </body></html>

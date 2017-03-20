@@ -41,9 +41,9 @@ else {
 			$ISBN  = mysql_result($books, $i, 'ISBN');
 			$quantity = mysql_result($books, $i, 'quantity');
 			$id = mysql_result($books, $i, 'id');
-			$total = $total + $price;
+			$total = $total + $price*$quantity;
 			$i++;
-			echo $quantity." <a href='listbookdetails_C.php?isbn=$ISBN'>$title</a><br>"; 
+			echo $quantity ."     <a href='listbookdetails_C.php?isbn=$ISBN'>$title</a><br>"; 
 		}
 		echo "<br>Total: \$$total";	
 		echo "	
@@ -61,6 +61,7 @@ else {
 		<form method='post' action='logout.php'>
 			<input type='submit' name='logout' value='Logout'>
 		</form>
+	    <button><a href='userhome.php' download>Show Source</a></button><br><br>	
 	</html>
 ";
 

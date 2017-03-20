@@ -16,6 +16,6 @@ while($row=mysql_fetch_assoc($result)) {
     foreach($row as $key=>$value) {
 		echo $key .": ". $value . "<br>";
     }
-    echo "<br>";
+    echo "<br>    <button><a href='login.php' download>Show Source</a></button><br><br>";
 }
 ?>
