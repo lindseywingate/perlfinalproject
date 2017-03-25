@@ -40,6 +40,6 @@ else {
 			$result = mysql_query($query);	
 		}
 	}
-	header("Location: http://people.aero.und.edu/~lwingate/457/exercise1/userhome.php");
+	header("Location: http://people.aero.und.edu/~lwingate/457/exercise1/shoppingcart_C.php");
 }
 ?>

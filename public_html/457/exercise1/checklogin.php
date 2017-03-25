@@ -1,7 +1,7 @@
 <?php
 #This page is used to check the login credentials
 
-if ($_POST["thisone"] == "login") { //If the user logs in
+if ($_POST["thisone"] == "Login") { //If the user logs in
 	$user = "lindseywingate";
 	$pass = "password";
 	$database = "lindseywingate";

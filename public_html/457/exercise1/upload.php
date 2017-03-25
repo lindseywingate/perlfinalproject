@@ -1,9 +1,5 @@
 <?php
 session_start();
-if(!isset($_SESSION['user_id']) || time() - $_SESSION['login_time'] > 1800) {
-	echo "Your session has expired. Please login again.";
-}
-else {
 echo"
 <html>
 <head>
@@ -23,5 +19,4 @@ echo"
 </body>
 </html>
 ";
-}
 ?>
