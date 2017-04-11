@@ -33,5 +33,7 @@ if($_POST['act']=="Upload" ) {
 		}
 	}	
 	mysql_close();
+	header("Location: http://people.aero.und.edu/~lwingate/457/exercise1/adminhome.php");
+
 }
 ?>
